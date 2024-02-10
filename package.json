@@ -1,0 +1,27 @@
+{
+  "private": false,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev --concurrency 11",
+    "lint": "turbo lint",
+    "clean": "turbo clean",
+    "test": "turbo test",
+    "check-types": "turbo check-types",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-prettier": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "freshbuild": "pnpm clean && pnpm install && pnpm build"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@7.15.0",
+  "dependencies": {
+    "@changesets/cli": "^2.26.2",
+    "win-node-env": "^0.6.1"
+  }
+}
